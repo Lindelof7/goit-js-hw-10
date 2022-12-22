@@ -30,7 +30,7 @@ function onSearch(e) {
 function createCountryList(countries) {
 
     if (countries.length > 10) {
-        Notiflix.Notify.failure("Too many matches found. Please enter a more specific name.");
+        Notiflix.Notify.info("Too many matches found. Please enter a more specific name.");
         return;
     }
 
