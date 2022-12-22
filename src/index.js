@@ -1,5 +1,5 @@
 import './css/styles.css';
-import { fetchCountries } from './fetchCountries'
+import { fetchCountries } from './fetchCountries.js'
 import Notiflix from 'notiflix';
 import debounce from 'lodash.debounce';
 
@@ -13,7 +13,7 @@ inputEl.addEventListener("input", debounce(onSearch, DEBOUNCE_DELAY))
 
 function onSearch(e) {
     e.preventDefault();
-    const searchQuery = e.target.value.trim()
+    const searchQuery = e.target.value.trim();
 
     countryInfoEl.innerHTML = '';
     countryListEl.innerHTML = '';
@@ -23,7 +23,7 @@ function onSearch(e) {
     } else {
         fetchCountries(searchQuery)
             .then((data) => { createCountryList(data) })
-        // .catch((err) => { console.log(err.status) })
+            .catch((err) => { console.error(err.message) })
     }
 }
 
@@ -51,7 +51,6 @@ function createCountryList(countries) {
           <h1 class = "big-country-population"><div class= "population"> Population: </div> ${country.population}</h1>
            <h1 class = "big-country-languages"><div class= "languages">Languages: </div> ${mappedLanguages(country.languages)}</h1> <ul></div>`
 
-            console.log(country.languages)
             return mappedCountries;
         }).join('');
 
@@ -60,7 +59,7 @@ function createCountryList(countries) {
     }
 }
 
-function clearList(searchQuery) {
+function clearList() {
     countryInfoEl.innerHTML = '';
     countryListEl.innerHTML = '';
 }
