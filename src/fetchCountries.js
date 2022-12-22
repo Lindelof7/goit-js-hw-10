@@ -1,6 +1,6 @@
 import Notiflix from "notiflix"
 
-export function fetchCountries({ searchQuery }) {
+export function fetchCountries(searchQuery) {
     return fetch(`https://restcountries.com/v3.1/name/${searchQuery}?fields=name,capital,population,flags,languages`)
         .then((r) => {
             if (!r.ok) {

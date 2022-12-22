@@ -15,12 +15,9 @@ function onSearch(e) {
     e.preventDefault();
     const searchQuery = e.target.value.trim();
 
-    countryInfoEl.innerHTML = '';
-    countryListEl.innerHTML = '';
+    clearList();
 
-    if (searchQuery === "") {
-        clearList(searchQuery)
-    } else {
+    if (searchQuery !== "") {
         fetchCountries(searchQuery)
             .then((data) => { createCountryList(data) })
             .catch((err) => { console.error(err.message) })
