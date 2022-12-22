@@ -13,7 +13,7 @@ inputEl.addEventListener("input", debounce(onSearch, DEBOUNCE_DELAY))
 
 function onSearch(e) {
     e.preventDefault();
-    searchQuery = e.target.value.trim()
+    let searchQuery = e.target.value.trim()
 
     countryInfoEl.innerHTML = '';
     countryListEl.innerHTML = '';
