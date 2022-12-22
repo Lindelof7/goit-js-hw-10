@@ -12,9 +12,67 @@ body {
   line-height: 1.5;
 }
 
+img{
+display: block;
+}
+
 #search-box {
   font: inherit;
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+}
+
+.country{
+  list-style: none;
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.country-title{
+  font-size: 14px;
+  padding-left: 20px;
+
+}
+
+.big-country{
+  list-style: none;
+}
+
+.big-country{
+ display: flex;
+ align-items: center;
+}
+
+.capital{
+ font-size: 20;
+ margin-right: 10;
+ font-weight:700;
+}
+
+.population{
+font-size: 20;
+ margin-right: 10;
+ font-weight:700;
+}
+
+.languages{
+font-size: 20;
+ margin-right: 10;
+ font-weight:700;
+}
+
+.big-country-capital{display: flex;
+  font-size: 20;
+  font-weight: normal;
+}
+
+.big-country-population{display: flex;
+  font-size: 20;
+  font-weight: normal;
+}
+
+.big-country-languages{display: flex;
+  font-size: 20;
+  font-weight: normal;
 }

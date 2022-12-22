@@ -1,7 +1,11 @@
-export function fetchCountries() {
+import Notiflix from "notiflix"
 
-        console.log(`${searchQuery}`)
-        return fetch(`https://restcountries.com/v3.1/name/${searchQuery}?fields=name.official,capital,population,flags.svg,languages`)
-            .then(r => { r.json() })
-            .then(country => { console.log(country) })
+export function fetchCountries() {
+    return fetch(`https://restcountries.com/v3.1/name/${searchQuery}?fields=name,capital,population,flags,languages`)
+        .then((r) => {
+            if (!r.ok) {
+            Notiflix.Notify.failure("Oops, there is no country with that name");
+            throw new Error(r.status)
+         } return r.json()
+})
     }
